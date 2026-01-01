@@ -36,7 +36,7 @@ function DashboardPage() {
       });
       if (response.status === 201) {
         const data = await response.json();
-        const storyId = data.story._id;
+        const storyId = data.story.id;
         navigate(`/dashboard/${storyId}/ReadStory`);
 
         console.log(data);
@@ -106,7 +106,7 @@ function DashboardPage() {
                 title={story?.storyTitle}
                 description={story?.storyDescription}
                 imageUrl={story?.storyContent[0]?.pageImage || ""}
-                id={story?._id}
+                id={story?.id}
                 key={index}
                 maxPages={story?.maxPages}
               />

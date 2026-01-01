@@ -67,7 +67,7 @@ function FeedbackPage() {
         ) : (
           <div className="space-y-8">
             {feedback.map((data, index) => (
-              <FeedbackCard key={index} data={data} _id={index} />
+              <FeedbackCard key={index} data={data} index={index} />
             ))}
           </div>
         )}

@@ -1,7 +1,7 @@
 import React from "react";
 import { Star } from "lucide-react";
 
-export default function FeedbackCard({ data, _id }) {
+export default function FeedbackCard({ data, index }) {
   return (
     <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-indigo-100 hover:border-indigo-200 transition-all">
       <div className="flex items-start gap-4">
@@ -10,7 +10,7 @@ export default function FeedbackCard({ data, _id }) {
         </div>
         <div className="flex-1">
           <h3 className="text-xl font-semibold text-indigo-600 mb-4">
-            Question {_id + 1}
+            Question {index + 1}
           </h3>
 
           <div className="space-y-4">
@@ -54,11 +54,10 @@ export default function FeedbackCard({ data, _id }) {
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star
                     key={i}
-                    className={`w-5 h-5 ${
-                      i < data?.rating
+                    className={`w-5 h-5 ${i < data?.rating
                         ? "text-yellow-400 fill-yellow-400"
                         : "text-gray-200"
-                    }`}
+                      }`}
                   />
                 ))}
               </div>
